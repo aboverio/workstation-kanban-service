@@ -1,5 +1,6 @@
 from flask import *
-import json
+
+from controllers.user import *
 
 user_router = Blueprint('user_router', __name__)
 
@@ -11,4 +12,4 @@ def index():
 
 @user_router.route('/signin', methods=['POST'])
 def sign_in():
-    return request.form
+    return user_sign_in()
