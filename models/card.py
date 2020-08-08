@@ -1,9 +1,8 @@
 from mongoengine import *
 from utils.validation import not_empty
-from models.card import Card
 
 
-class Board(Document):
+class Card(Document):
     title = StringField(validation=not_empty, required=True)
     userId = ObjectIdField(required=True)
-    cards = ListField(ReferenceField(Card))
+    boardId = ObjectIdField(required=True)
