@@ -1,5 +1,5 @@
 from mongoengine import *
-from utils.validation import not_empty
+from utils.validations import not_empty
 import bcrypt
 
 
