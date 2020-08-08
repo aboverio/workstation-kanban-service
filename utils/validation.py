@@ -1,6 +1,6 @@
 from mongoengine import  *
 
 
-def not_empty(val, attribute_name):
+def not_empty(val):
     if not val:
-        raise ValidationError(f'{attribute_name} cannot be empty!')
+        raise ValidationError(f'Cannot be empty!')
