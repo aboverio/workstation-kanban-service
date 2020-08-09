@@ -1,14 +1,14 @@
 from mongoengine import *
-from utils.validations import not_empty
+from utils.validations.model_validation import ModelValidation
 import bcrypt
 
 
 class User(Document):
-    firstName = StringField(validation=not_empty)
+    firstName = StringField(validation=ModelValidation.not_empty)
     lastName = StringField()
-    username = StringField(validation=not_empty)
-    email = StringField(validation=not_empty)
-    password = StringField(validation=not_empty)
+    username = StringField(validation=ModelValidation.not_empty)
+    email = StringField(validation=ModelValidation.not_empty)
+    password = StringField(validation=ModelValidation.not_empty)
 
     def save(self, *args, **kwargs):
         self.password = bcrypt.hashpw(self.password, bcrypt.gensalt())
