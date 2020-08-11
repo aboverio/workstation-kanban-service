@@ -10,10 +10,13 @@ class BadRequestError(Exception):
         if status_code is not None:
             self.status_code = status_code
 
-        if type(payload) is list or type(payload) is dict:
-            self.payload = {
-                payload_key: payload
-            }
+        if payload is not None and payload_key is not None:
+            if type(payload) is list or type(payload) is dict:
+                self.payload = {
+                    payload_key: payload
+                }
+        else:
+            self.payload = payload
 
     def to_dict(self):
         err = dict(self.payload or ())
