@@ -2,9 +2,12 @@ import os
 from flask import Flask
 from mongoengine import connect
 from flask_cors import CORS
+from dotenv import load_dotenv
 
 from routes.user import user_router
 from errors import error_handlers
+
+load_dotenv()
 
 app = Flask(__name__)
 
