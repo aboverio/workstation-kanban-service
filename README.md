@@ -1,2 +1,3 @@
-# sunday-kanban-api
-The RESTful API for Sunday Kanban.
+# Sunday Kans API
+
+The API of Sunday Kans.
