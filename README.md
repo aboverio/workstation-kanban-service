@@ -1,3 +1,3 @@
-# Sunday Kans API
+# Kanban - API
 
-The API of Sunday Kans.
+Open-Source Kanban API
